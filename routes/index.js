@@ -19,9 +19,9 @@ router.get('/', function(req, res, next) {
   res.render('landing');
 });
 
-router.get('/register') {
+router.get('/register', function(req,res,next) {
   res.render('auth')
-}
+});
 
 
 router.post('/register', function(req,res,next){
@@ -33,9 +33,9 @@ router.post('/register', function(req,res,next){
   })
 });
 
-router.get('/login'){
-res.render('login')
-}
+router.get('/login', function(req,res,next) {
+  res.render('login')
+});
 
 router.post('/login', function(req,res,next){
   knex('users')
