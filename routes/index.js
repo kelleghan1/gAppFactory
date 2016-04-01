@@ -1,4 +1,4 @@
-
+``
 'use strict';
 // var bcrypt = require('bcryptjs');
 
@@ -113,6 +113,45 @@ router.get('/logout', function(req,res,next){
 router.get('/home',authorizedUser, function(req,res,next){
   res.render('home');
 });
+
+router.get('/orders', function(req,res,next){
+  knex('p-mang').then(function (pMangResults) {
+    knex('devs')
+    .then(function(devResults){
+      knex('goal')
+      .then(function(goalResults){
+        console.log(goalResults);
+        knex('tech')
+        .then(function(techResults){
+        res.render('order', {pMang: pMangResults,
+                             devs: devResults,
+                             goals: goalResults,
+                             tech: techResults});
+        })
+      })
+    })
+
+  })
+});
+
+// router.post('/orders/add', function(req, res, next) {
+//   console.log(req.body);
+  // knex('p-mang').then(function (pMangResults) {
+  //   knex('devs')
+  //   .then(function(devResults){
+  //     knex('goal')
+  //     .then(function(goalResults){
+  //       knex('tech')
+  //       .then(function(techResults){
+  //       knex('cust')
+  //       .where({name: req.session.user})
+  //       .returning('id')
+  //       .then(function(custID){
+  //
+  //       })
+  //       })
+  //     })
+  //   })
 
 router.get('/projects', function(req, res, next) {
 

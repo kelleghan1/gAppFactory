@@ -40,7 +40,7 @@ ul {
   list-style: none;
 }
 
-li {
+nav > ul > li {
   padding-left: 10px;
   float: left;
 
@@ -70,6 +70,12 @@ header {
 ol > li > a {
   color: black;
 
+}
+
+
+ol > li {
+  display: block;
+  color: black;
 }
 
 nav {
@@ -125,7 +131,6 @@ nav {
 }
 
 .container {
-  clear: both;
   padding: 150px 20px 150px 20px;
   background-color: white;
   width: 80%;
