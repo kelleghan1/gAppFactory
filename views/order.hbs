@@ -1,0 +1,70 @@
+<div class="container">
+  <h1>Order while you still can!</h1>
+
+<form action="/orders/add" method="post">
+
+  <label>Project Manager</label>
+  <select>
+    <optgroup label="Project manager">
+      {{#each pMang}}
+      <option name="p-mang" value="{{this.name}}">{{this.name}}</option>
+      {{/each}}
+    </optgroup>
+  </select>
+
+  <label>Programmers</label>
+  <select>
+    <optgroup label="Programmers">
+      {{#each devs}}
+      <option name="devs" value="{{this.name}}">{{this.name}}</option>
+      {{/each}}
+    </optgroup>
+  </select>
+
+  <label>App Goals</label>
+  <select>
+    <optgroup label="goals">
+      {{#each goals}}
+      <option name="goal" value="{{this.goal}}">{{this.goal}}</option>
+      {{/each}}
+    </optgroup>
+  </select>
+
+  <label>Technology</label>
+  <select>
+    <optgroup label="tech">
+      {{#each tech}}
+      <option name="tech" value="{{this.name}}">{{this.name}}</option>
+      {{/each}}
+    </optgroup>
+  </select>
+
+  <input  type="submit" value="Order Now">
+
+</form>
+
+</div>
+
+<!-- <select>
+  <optgroup label="Project maneger">
+    {{#each pMang}}
+    <option>{{this.name}}</option>
+    {{/each}}
+  </optgroup>
+</select>
+
+<select>
+  <optgroup label="Project maneger">
+    {{#each pMang}}
+    <option>{{this.name}}</option>
+    {{/each}}
+  </optgroup>
+</select>
+
+<select>
+  <optgroup label="Project maneger">
+    {{#each p-mang}}
+    <option>{{this.name}}</option>
+    {{/each}}
+  </optgroup>
+</select> -->
