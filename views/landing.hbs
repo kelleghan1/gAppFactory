@@ -10,3 +10,8 @@
 
 <a href="/users/login"><div class='buttonwrap'>Log In</div></a>
 <a href="/register"><div class='buttonwrap'>Sign Up</div></a>
+{{#if user}}
+<h2>Hello,</h2>
+<h3>{{user}}</h3>
+<a href='/logout'>Log Out</a>
+{{/if}}

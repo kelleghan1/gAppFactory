@@ -40,7 +40,7 @@ router.post('/user/login', function(req, res, next) {
     console.log()
     res.render('home', {user: req.session.user});
   } else {
-    res.render('/login');
+    res.render('login', {error: "Invalid Credentials"});
   }
 });
 });

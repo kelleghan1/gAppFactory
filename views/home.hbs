@@ -1,9 +1,6 @@
 <p>HOMEPAGE</p>
-<a href='/logout'>Log Out</a>
 {{#if user}}
-<h2>{{user}}</h2>
-<h3>Hello, {{user}}</h3>
-<form class="" action="/logout" method="post">
-  <input type="submit" name="name" value="Logout">
-</form>
+<h2>Hello,</h2>
+<h3>{{user}}</h3>
+<a href='/logout'>Log Out</a>
 {{/if}}
