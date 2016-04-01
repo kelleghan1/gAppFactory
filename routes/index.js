@@ -8,6 +8,17 @@ var router = express.Router();
 var bcrypt = require('bcrypt');
 var Users = function() { return knex('users') };
 var knex = require('knex')(require('../knexfile')['development']);
+
+
+
+
+
+
+router.get('/register', function(req, res, next) {
+  res.render('auth');
+});
+
+
 router.post('/user/register', function(req, res, next) {
   Users().where({
     username: req.body.username
@@ -78,9 +89,9 @@ router.get('/', function(req, res, next) {
   res.render('landing');
 });
 
-router.get('/register', function(req,res,next) {
-  res.render('auth')
-});
+// router.get('/register', function(req,res,next) {
+//   res.render('auth')
+// });
 
 
 
