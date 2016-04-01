@@ -1,7 +1,7 @@
 body {
   width: 100%;
   margin: 0;
-  background-color: grey;
+  background-color: #d9d9d9;
   font-family: 'Futura'
 }
 
@@ -16,7 +16,7 @@ h1 {
 }
 
 a:link {
-  color: grey;
+  color: white;
   text-decoration: none;
 }
 
@@ -32,7 +32,7 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: white;
+  color: grey;
 }
 
 ul {
@@ -78,7 +78,7 @@ nav {
 
 
 .imgwrap {
-padding: 0;
+  padding: 0;
 }
 
 
@@ -121,7 +121,7 @@ padding: 0;
 
 .container {
   clear: both;
-  padding: 150px 20px 20px 20px;
+  padding: 150px 20px 150px 20px;
   background-color: white;
   width: 80%;
   margin: 0 auto;
