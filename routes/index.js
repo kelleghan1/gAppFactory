@@ -110,8 +110,6 @@ router.get('/logout', function(req,res,next){
   res.clearCookie('session');
   res.clearCookie('session.sig');
   req.session.user = null;
-  // res.clearCookie('session');
-  // res.clearCookie('session.sig');
   res.redirect('/');
 });
 
