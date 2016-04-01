@@ -1,7 +1,7 @@
 body {
   width: 100%;
   margin: 0;
-  background-color: grey;
+  background-color: #d9d9d9;
   font-family: 'Futura'; }
 
 img {
@@ -12,7 +12,7 @@ h1 {
   margin: 0; }
 
 a:link {
-  color: grey;
+  color: white;
   text-decoration: none; }
 
 /* visited link */
@@ -25,7 +25,7 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: white; }
+  color: grey; }
 
 ul {
   margin: 0;
@@ -36,6 +36,7 @@ li {
   float: left; }
 
 header {
+  z-index: 1000;
   position: fixed;
   width: 100%;
   overflow: auto;
@@ -71,11 +72,12 @@ nav {
   padding: 0 0 10px 0; }
 
 .buttonwrap {
-  top: 200px;
+  z-index: 100;
+  top: 150px;
   text-align: center;
   width: 100%;
   height: 50px;
-  position: fixed; }
+  position: absolute; }
 
 .buttonwrap > div > a {
   font-size: 25px;
@@ -91,6 +93,8 @@ nav {
   display: inline; }
 
 .container {
+  clear: both;
+  padding: 150px 20px 150px 20px;
   background-color: white;
   width: 80%;
   margin: 0 auto;

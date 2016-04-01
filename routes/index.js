@@ -114,4 +114,12 @@ router.get('/home',authorizedUser, function(req,res,next){
   res.render('home');
 });
 
+router.get('/projects', function(req, res, next) {
+
+  knex('apps').then(function(data) {
+    res.render('projects', {cproj: data})
+  });
+
+})
+
 module.exports = router;
