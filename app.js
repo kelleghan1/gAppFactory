@@ -1,3 +1,5 @@
+"use strict";
+require('dotenv').load();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,20 +9,25 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var cookieSession = require('cookie-session');
-
 var app = express();
+const Users = function() { return knex('users') };
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 //cookieSession
+// app.use(session({
+//     secret: process.env.SECRET,
+//     name: 'SIMPLEAPP__',
+//     resave: true,
+//     saveUninitialized: true
+// }));
 app.use(cookieSession({
   name: 'session',
   keys: [
-    'SESSION_KEY1',
-    'SESSION_KEY2'
-  ]
+   process.env.SECRET
+ ]
 }))
 
 // uncomment after placing your favicon in /public
@@ -28,7 +35,7 @@ app.use(cookieSession({
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);

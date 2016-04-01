@@ -1,68 +1,91 @@
 body {
   width: 100%;
   margin: 0;
-  font-family: 'Futura'; }
+
+  font-family: 'Futura'
+
+}
 
 a:link {
   color: grey;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 /* visited link */
 a:visited {
-  color: white; }
+  color: white;
+}
 
 /* mouse over link */
 a:hover {
-  color: white; }
+  color: white;
+}
 
 /* selected link */
 a:active {
-  color: white; }
+  color: white;
+}
 
 ul {
   margin: 0;
-  list-style: none; }
+  list-style: none;
+}
 
 li {
   padding-left: 10px;
-  float: left; }
+  float: left;
+
+}
 
 header {
   width: 100%;
   overflow: auto;
   background-color: black;
-  color: white; }
+  color: white;
+}
 
 .headerleft {
-  display: inline-block; }
+  display: inline-block;
+
+}
 
 .headerright {
   padding: 15px;
   float: right;
-  display: inline-block; }
+  display: inline-block;
+
+}
 
 nav {
   clear: both;
-  float: right; }
+  float: right;
+}
 
 .imgwrap > img {
-  width: 100%; }
+  width: 100%;
+}
+
 
 .logowrap > img {
   width: 20%;
   padding: 10px;
-  float: left; }
+  float: left;
+}
 
 .usernav {
   font-size: 12px;
   float: right;
-  padding: 0 0 10px 0; }
+  padding: 0 0 10px 0;
+}
+
 
 .buttonwrap {
-  width: 100%; }
-
+  width: 100%;
+}
 .usernav > a {
-  display: inline; }
+  display: inline;;
+}
 
 .usernav > p {
-  display: inline; }
+  display: inline;;
+}
