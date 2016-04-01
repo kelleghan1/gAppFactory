@@ -16,7 +16,7 @@ function authorizedUser(req, res, next) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('auth');
+  res.render('landing');
 });
 
 router.post('/user/register', function(req,res,next){
