@@ -80,7 +80,7 @@ function authorizedUser(req, res, next) {
   if (req.session.user) {
     next();
   } else {
-    res.redirect('login');
+    res.redirect('/');
   }
 }
 
@@ -114,7 +114,7 @@ router.get('/home',authorizedUser, function(req,res,next){
   res.render('home');
 });
 
-router.get('/orders', function(req,res,next){
+router.get('/orders', authorizedUser, function(req,res,next){
   knex('p-mang').then(function (pMangResults) {
     knex('devs')
     .then(function(devResults){
