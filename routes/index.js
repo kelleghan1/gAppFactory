@@ -62,6 +62,8 @@ router.post('/user/login', function(req,res,next){
 
 router.get('/logout', function(req,res,next){
   req.session.user = null;
+  res.clearCookie('session');
+  res.clearCookie('session.sig');
   res.redirect('/');
 });
 
