@@ -2,29 +2,39 @@
 
 
 <html>
-  <head>
-    <title>{{title}}</title>
+<head>
+  <title>{{title}}</title>
 
-    <link rel="stylesheet" href="../stylesheets/style.css" media="screen" title="no title" charset="utf-8">
-  </head>
+  <link rel="stylesheet" href="../stylesheets/style.css" media="screen" title="no title" charset="utf-8">
+</head>
 
-  <body>
-    <header>
-      <div class='logoimg'>
-      </div>
+<body>
 
+  <header>
+
+    <div clss='headerleft'>
+    <div class='logowrap'>
+      <img src="../images/citylogo.png"/>
+    </div>
+  </div>
+
+  <div class='headerright'>
+    <div class='usernav'>
+      <a href="/login">Log In</a><p>|</p>
+      <a href="/register">Sign Up</a>
+    </div>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
+        <li><a href="/projects">Projects</a></li>
         <li><a href="/users">Users</a></li>
         <li><a href="/projects">Projects</a></li>
 
-        <li><a href="/login">Login</a></li>
-        <li><a href="/logout">Logout</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
-    {{{body}}}
-  </body>
+{{{body}}}
+</body>
 </html>

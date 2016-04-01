@@ -1,7 +1,33 @@
 body {
+  width: 100%;
+  margin: 0;
+
+  font-family: 'Futura'
+
+}
+
+a:link {
+  color: grey;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: white;
 }
 
 ul {
+  margin: 0;
   list-style: none;
 }
 
@@ -11,7 +37,55 @@ li {
 
 }
 
-.imgwrap {
+header {
   width: 100%;
-  background-image: "../images/cityweb.jpg";
+  overflow: auto;
+  background-color: black;
+  color: white;
+}
+
+.headerleft {
+  display: inline-block;
+
+}
+
+.headerright {
+  padding: 15px;
+  float: right;
+  display: inline-block;
+
+}
+
+nav {
+  clear: both;
+  float: right;
+}
+
+.imgwrap > img {
+  width: 100%;
+}
+
+
+.logowrap > img {
+  width: 20%;
+  padding: 10px;
+  float: left;
+}
+
+.usernav {
+  font-size: 12px;
+  float: right;
+  padding: 0 0 10px 0;
+}
+
+
+.buttonwrap {
+  width: 100%;
+}
+.usernav > a {
+  display: inline;;
+}
+
+.usernav > p {
+  display: inline;;
 }
