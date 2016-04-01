@@ -19,18 +19,25 @@ router.get('/', function(req, res, next) {
   res.render('landing');
 });
 
-router.post('/user/register', function(req,res,next){
+router.get('/register') {
+  res.render('auth')
+}
 
+
+router.post('/register', function(req,res,next){
   var hash = bcrypt.hashSync(req.body.password, 8);
   knex('users')
   .insert({'username': req.body.username.toLowerCase(), 'password': hash})
   .then(function(response){
     res.redirect('/');
   })
-
 });
 
-router.post('/user/login', function(req,res,next){
+router.get('/login'){
+res.render('login')
+}
+
+router.post('/login', function(req,res,next){
   knex('users')
   .where('username', '=', req.body.username.toLowerCase())
   .first()
@@ -38,43 +45,20 @@ router.post('/user/login', function(req,res,next){
     if(response && bcrypt.compareSync(req.body.password, response.password)){
       res.redirect('/home');
     } else {
-      res.render('auth', {error: 'Invalid username or password'});
-    }
-  });
-});
-
-router.post('/user/login', function(req,res,next){
-  knex('users')
-  .where('username', '=', req.body.username.toLowerCase())
-  .first()
-  .then(function(response){
-    if(response && bcrypt.compareSync(req.body.password, response.password)){
-
-      //LOOK HERE: Notice we set req.session.user to the current user before redirecting
-      req.session.user = response.username;
-
-      res.redirect('/home');
-    } else {
-      res.render('auth', {error: 'Invalid username or password'});
+      res.render('login', {error: 'Invalid username or password'});
     }
   });
 });
 
 router.get('/logout', function(req,res,next){
+  res.clearCookie('session');
+  res.clearCookie('session.sig');
   req.session.user = null;
   res.redirect('/');
 });
 
 router.get('/home', function(req,res,next){
   res.render('home');
-});
-
-router.post('/user/register', function(req,res,next){
-
-});
-
-router.post('/user/login', function(req,res,next){
-
 });
 
 module.exports = router;
