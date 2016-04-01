@@ -6,7 +6,7 @@ exports.seed = function(knex, Promise) {
     knex('goal').del(),
     knex('p-mang').del(),
     knex('tech').del(),
-    
+
     knex('devs').insert({id: 1, name: 'Sassy Summer'}),
     knex('devs').insert({id: 2, name: 'Last Lincoln'}),
     knex('devs').insert({id: 3, name: 'Meticulous Mike'}),
