@@ -4,3 +4,7 @@ ul {
 li {
   padding-left: 10px;
   float: left; }
+
+.imgwrap {
+  width: 100%;
+  background-image: "../images/cityweb.jpg"; }

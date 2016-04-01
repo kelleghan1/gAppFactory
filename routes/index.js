@@ -19,12 +19,12 @@ router.get('/', function(req, res, next) {
   res.render('landing');
 });
 
-router.get('/register') {
-  res.render('auth')
-}
+router.get('/register', function(req,res, next) {
+  res.render('auth');
+})
 
 
-router.post('/register', function(req,res,next){
+router.post('/user/register', function(req,res,next){
   var hash = bcrypt.hashSync(req.body.password, 8);
   knex('users')
   .insert({'username': req.body.username.toLowerCase(), 'password': hash})
@@ -33,11 +33,11 @@ router.post('/register', function(req,res,next){
   })
 });
 
-router.get('/login'){
+router.get('/login', function(req, res, next){
 res.render('login')
-}
+})
 
-router.post('/login', function(req,res,next){
+router.post('/user/login', function(req,res,next){
   knex('users')
   .where('username', '=', req.body.username.toLowerCase())
   .first()
