@@ -10,3 +10,11 @@
 </form>
 
 <a href="/register">Create an account</a>
+{{#if user}}
+<h2>Hello,</h2>
+<h3>{{user}}</h3>
+<a href='/logout'>Log Out</a>
+{{/if}}
+{{#if error}}
+<h3 style="color: red;">Uh oh...{{error}}</h3>
+{{/if}}
