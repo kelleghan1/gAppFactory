@@ -111,4 +111,20 @@ router.get('/projects', function(req, res, next) {
 
 })
 
+router.get('/devs', function(req, res, next) {
+
+  knex('devs')
+  .then(function(devData) {
+    knex('p-mang')
+    .then(function(pmanData) {
+      console.log(pmanData);
+      res.render('devs', {
+        devTeam: devData,
+        pmanTeam: pmanData
+      });
+    });
+  });
+
+})
+
 module.exports = router;
