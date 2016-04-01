@@ -31,7 +31,7 @@ ul {
   margin: 0;
   list-style: none; }
 
-li {
+nav > ul > li {
   padding-left: 10px;
   float: left; }
 
@@ -52,6 +52,10 @@ header {
   display: inline-block; }
 
 ol > li > a {
+  color: black; }
+
+ol > li {
+  display: block;
   color: black; }
 
 nav {
@@ -96,7 +100,6 @@ nav {
   display: inline; }
 
 .container {
-  clear: both;
   padding: 150px 20px 150px 20px;
   background-color: white;
   width: 80%;
