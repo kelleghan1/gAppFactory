@@ -18,7 +18,7 @@ router.post('/user/register', function(req, res, next) {
         username: req.body.username,
         password: hash
       }).then(function(){
-        res.render('/');
+        res.redirect('/');
       });
     } else {
       res.redirect('/users/login');
@@ -40,7 +40,7 @@ router.post('/user/login', function(req, res, next) {
     console.log()
     res.render('home', {user: req.session.user});
   } else {
-    res.render('login');
+    res.render('/login');
   }
 });
 });
