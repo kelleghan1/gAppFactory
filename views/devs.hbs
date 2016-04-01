@@ -1,0 +1,19 @@
+<div class='container'>
+  <h1>Developers</h1>
+    <ol>
+      {{#each devTeam}}
+        <li>
+          {{this.name}}
+        </li><br>
+      {{/each}}
+    </ol>
+  <h1>Project Managers</h1>
+    <ol>
+      {{#each pmanTeam}}
+        <li>
+          {{this.name}} - 
+          Special Ability: {{this.s-power}}
+        </li><br>
+      {{/each}}
+    </ol>
+</div>
