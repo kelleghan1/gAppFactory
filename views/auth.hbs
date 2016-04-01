@@ -11,3 +11,8 @@
 {{#if error}}
 <h2 style="color:red;">{{error}}</h2>
 {{/if}}
+{{#if user}}
+<h2>Hello,</h2>
+<h3>{{user}}</h3>
+<a href='/logout'>Log Out</a>
+{{/if}}

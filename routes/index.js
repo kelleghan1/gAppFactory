@@ -27,22 +27,6 @@ router.post('/user/register', function(req, res, next) {
 });
 
 router.post('/user/login', function(req, res, next) {
-  // Users().where({
-  //   username: req.body.username,
-  // }).first().then(function(user) {
-  //   if ( user && bcrypt.compareSync(req.body.password, user.password) ) {
-  //     req.session.user = user.username;
-  //     // req.session.userID = user.id;
-  //     // res.cookie('username', user.id, {
-  //     //   signed: true,
-  //     //   secret: "secret"
-  //     // });
-  //     res.redirect('/');
-  //   } else {
-  //     res.redirect('/users/login');
-  //   }
-  // });
-
   knex('users')
 .where('username', '=', req.body.username)
 .first()
@@ -51,10 +35,12 @@ router.post('/user/login', function(req, res, next) {
 
     //LOOK HERE: Notice we set req.session.user to the current user before redirecting
     req.session.user = response.username;
-
-    res.redirect('/home');
+    console.log(response.username);
+    console.log(req.session.user);
+    console.log()
+    res.render('home', {user: req.session.user});
   } else {
-    res.render('login', {error: 'Invalid username or password'});
+    res.render('login', {error: "Invalid Credentials"});
   }
 });
 });
@@ -83,7 +69,7 @@ function authorizedUser(req, res, next) {
   if (req.session.user) {
     next();
   } else {
-    res.redirect('/');
+    res.redirect('login');
   }
 }
 
