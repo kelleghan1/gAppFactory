@@ -1,13 +1,21 @@
-<h1>REGISTER!</h1>
-<form action="/user/register" method="post">
-  <label>Username!</label>
-  <input type="text" name="username">
-  <label>Password!</label>
-  <input type="password" name="password">
+<div class='container'><h1>REGISTER!</h1>
+  
+  <form action="/user/register" method="post">
+    <label>Username!</label>
+    <input type="text" name="username">
+    <label>Password!</label>
+    <input type="password" name="password">
 
-  <input type="submit" value="Register!">
-</form>
+    <input type="submit" value="Register!">
+  </form>
 
-{{#if error}}
-<h2 style="color:red;">{{error}}</h2>
-{{/if}}
+  {{#if error}}
+  <h2 style="color:red;">{{error}}</h2>
+  {{/if}}
+  {{#if user}}
+  <h2>Hello,</h2>
+  <h3>{{user}}</h3>
+  <a href='/logout'>Log Out</a>
+  {{/if}}
+
+</div>

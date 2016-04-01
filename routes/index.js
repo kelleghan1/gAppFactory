@@ -8,6 +8,17 @@ var router = express.Router();
 var bcrypt = require('bcrypt');
 var Users = function() { return knex('users') };
 var knex = require('knex')(require('../knexfile')['development']);
+
+
+
+
+
+
+router.get('/register', function(req, res, next) {
+  res.render('auth');
+});
+
+
 router.post('/user/register', function(req, res, next) {
   Users().where({
     username: req.body.username
@@ -27,22 +38,6 @@ router.post('/user/register', function(req, res, next) {
 });
 
 router.post('/user/login', function(req, res, next) {
-  // Users().where({
-  //   username: req.body.username,
-  // }).first().then(function(user) {
-  //   if ( user && bcrypt.compareSync(req.body.password, user.password) ) {
-  //     req.session.user = user.username;
-  //     // req.session.userID = user.id;
-  //     // res.cookie('username', user.id, {
-  //     //   signed: true,
-  //     //   secret: "secret"
-  //     // });
-  //     res.redirect('/');
-  //   } else {
-  //     res.redirect('/users/login');
-  //   }
-  // });
-
   knex('users')
 .where('username', '=', req.body.username)
 .first()
@@ -51,10 +46,12 @@ router.post('/user/login', function(req, res, next) {
 
     //LOOK HERE: Notice we set req.session.user to the current user before redirecting
     req.session.user = response.username;
-
-    res.redirect('/home');
+    console.log(response.username);
+    console.log(req.session.user);
+    console.log()
+    res.render('home', {user: req.session.user});
   } else {
-    res.render('login', {error: 'Invalid username or password'});
+    res.render('login', {error: "Invalid Credentials"});
   }
 });
 });
@@ -83,7 +80,7 @@ function authorizedUser(req, res, next) {
   if (req.session.user) {
     next();
   } else {
-    res.redirect('/');
+    res.redirect('login');
   }
 }
 
@@ -92,9 +89,9 @@ router.get('/', function(req, res, next) {
   res.render('landing');
 });
 
-router.get('/register', function(req,res,next) {
-  res.render('auth')
-});
+// router.get('/register', function(req,res,next) {
+//   res.render('auth')
+// });
 
 
 
@@ -110,8 +107,6 @@ router.get('/logout', function(req,res,next){
   res.clearCookie('session');
   res.clearCookie('session.sig');
   req.session.user = null;
-  // res.clearCookie('session');
-  // res.clearCookie('session.sig');
   res.redirect('/');
 });
 
@@ -139,8 +134,8 @@ router.get('/orders', function(req,res,next){
   })
 });
 
-router.post('/orders/add', function(req, res, next) {
-  console.log(req.body);
+// router.post('/orders/add', function(req, res, next) {
+//   console.log(req.body);
   // knex('p-mang').then(function (pMangResults) {
   //   knex('devs')
   //   .then(function(devResults){
@@ -157,6 +152,13 @@ router.post('/orders/add', function(req, res, next) {
   //       })
   //     })
   //   })
+
+router.get('/projects', function(req, res, next) {
+
+  knex('apps').then(function(data) {
+    res.render('projects', {cproj: data})
+  });
+
 })
 
 module.exports = router;

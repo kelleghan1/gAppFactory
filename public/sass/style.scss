@@ -1,13 +1,22 @@
 body {
   width: 100%;
   margin: 0;
-
+  background-color: #d9d9d9;
   font-family: 'Futura'
+}
+
+img {
+  margin:0;
+  padding:0;
+}
+
+h1 {
+  margin: 0;
 
 }
 
 a:link {
-  color: grey;
+  color: white;
   text-decoration: none;
 }
 
@@ -23,7 +32,7 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: white;
+  color: grey;
 }
 
 ul {
@@ -38,6 +47,8 @@ li {
 }
 
 header {
+  z-index: 1000;
+  position: fixed;
   width: 100%;
   overflow: auto;
   background-color: black;
@@ -56,6 +67,11 @@ header {
 
 }
 
+ol > li > a {
+  color: black;
+
+}
+
 nav {
   clear: both;
   float: right;
@@ -63,6 +79,11 @@ nav {
 
 .imgwrap > img {
   width: 100%;
+}
+
+
+.imgwrap {
+  padding: 0;
 }
 
 
@@ -80,7 +101,20 @@ nav {
 
 
 .buttonwrap {
+  z-index: 100;
+  top: 150px;
+  text-align: center;
   width: 100%;
+  height: 50px;
+  position: absolute;
+}
+
+.buttonwrap > div > a {
+  font-size: 25px;
+  margin: 10px;
+  background-color: rgba(0,0,0, 0.7);
+  padding: 10px;
+  color: white;
 }
 .usernav > a {
   display: inline;;
@@ -88,4 +122,12 @@ nav {
 
 .usernav > p {
   display: inline;;
+}
+
+.container {
+  clear: both;
+  padding: 150px 20px 150px 20px;
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
 }

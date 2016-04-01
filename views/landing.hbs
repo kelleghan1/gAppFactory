@@ -1,12 +1,25 @@
 
 
 <section>
-
-  <div class='imgwrap'>
-    <img src="../images/cityweb.jpg"/>
-  </div>
+  <div class='buttonwrap'><div><a href="/users/login">Log In</a><a href="/register">Sign Up</a></div></div>
+  <div class='imgwrap'><img src="../images/cityweb.jpg"/></div>
 </section>
 
+<div class='container'>
+  <h1>Welcome to G-appFactory</h1>
+  <ol>
+    <li>Tired of mercenaries slumping over after sustaining battle injuries?</li>
+    <li>Tired of your Murder-Bots not murdering enough or slow enough?</li>
+    <li>Tired of your humanitarian projects not providing enough aid after the first two options?</li>
+  </ol>
+  <p>Well we've got you covered at G-appFactory! At G-appFactory we only hire the top project managers and
+    programers. We use the latest technologies and program languages to build your App! Guarantee satisfaction
+    or your money back!
+  </p>
+</div>
 
-<a href="/users/login"><div class='buttonwrap'>Log In</div></a>
-<a href="/register"><div class='buttonwrap'>Sign Up</div></a>
+{{#if user}}
+<h2>Hello,</h2>
+<h3>{{user}}</h3>
+<a href='/logout'>Log Out</a>
+{{/if}}
