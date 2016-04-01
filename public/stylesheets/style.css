@@ -28,6 +28,11 @@ li {
   float: left; }
 
 header {
+
+}
+
+
+.imgwrap {
   width: 100%;
   overflow: auto;
   background-color: black;
