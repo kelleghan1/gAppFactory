@@ -78,6 +78,7 @@ router.post('/user/login', function(req, res, next) {
 //or redirect back to '/' if there is no session.
 function authorizedUser(req, res, next) {
   if (req.session.user) {
+    console.log("authorized and pass");
     next();
   } else {
     res.redirect('/');
