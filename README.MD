@@ -25,7 +25,7 @@
 * San
 6)What did YOU kick ass at?
 * Anthony
-* Coleman - Photoshop, Illustrator, Sass
+* Coleman - Photoshop, Illustrator, Sass, and setting up the initial repository
 * Max
 * San
 7)What is "going into your learning queue"?
