@@ -9,15 +9,9 @@ var bcrypt = require('bcrypt');
 var Users = function() { return knex('users') };
 var knex = require('knex')(require('../knexfile')['development']);
 
-
-
-
-
-
 router.get('/register', function(req, res, next) {
   res.render('auth');
 });
-
 
 router.post('/user/register', function(req, res, next) {
   Users().where({
@@ -70,9 +64,6 @@ router.post('/user/login', function(req, res, next) {
 //     }
 //   });
 // });
-
-
-
 
 //check if a user session is active and call next() if there is a user session,
 //or redirect back to '/' if there is no session.
